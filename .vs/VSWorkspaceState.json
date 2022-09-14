@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\katalog",
-    "\\katalog\\fixtures",
-    "\\katalog\\templates"
+    "\\Asset",
+    "\\katalog\\fixtures"
   ],
-  "SelectedNode": "\\katalog\\models.py",
+  "SelectedNode": "\\Asset\\Alur Request Django.png",
   "PreviewInSolutionExplorer": false
 }
