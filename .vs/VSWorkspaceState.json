@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\katalog\\templates",
-    "\\project_django"
+    "\\katalog",
+    "\\katalog\\fixtures",
+    "\\katalog\\templates"
   ],
-  "SelectedNode": "\\katalog",
+  "SelectedNode": "\\katalog\\models.py",
   "PreviewInSolutionExplorer": false
 }
