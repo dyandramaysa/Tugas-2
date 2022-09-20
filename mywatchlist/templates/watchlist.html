@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5>Nama: </h5>
+<b>{{nama}}</b>
+
+<table>
+    <tr>
+        <th>Sudah/Belum</th>
+        <th>Judul</th>
+        <th>Rating</th>
+        <th>Tanggal Rilis</th>
+        <th>Review</th>
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    {% for film in list_tontonan %}
+    <tr>
+        <th>{{film.watched}}</th>
+        <th>{{film.title}}</th>
+        <th>{{film.rating}}</th>
+        <th>{{film.release_date}}</th>
+        <th>{{film.review}}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

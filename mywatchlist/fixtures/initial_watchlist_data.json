@@ -1,0 +1,112 @@
+[
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Sudah",
+      "title": "Thor: Love and Thunder",
+      "rating": "5",
+      "release_date": "2022-06-15",
+      "review": "Sangat bagus, luar biasa!"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Belum",
+      "title": "Mencuri Raden Saleh",
+      "rating": "4",
+      "release_date": "2022-08-21",
+      "review": "Sangat bagus, luar biasa!"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Belum",
+      "title": "She Would Never Know",
+      "rating": "5",
+      "release_date": "2020-02-13",
+      "review": "Harus nonton soalnya ada Rowoon!"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Belum",
+      "title": "Big Mouth",
+      "rating": "5",
+      "release_date": "2022-05-03",
+      "review": "Park Chang Ho sangat tampan!"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Belum",
+      "title": "Our Blues",
+      "rating": "3",
+      "release_date": "2020-05-14",
+      "review": "Tokoh utama kurang menarik"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Sudah",
+      "title": "Descendants of The Sun",
+      "rating": "5",
+      "release_date": "2016-02-18",
+      "review": "Kapten Yoo Si Jin, terbaik!"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Belum",
+      "title": "Pengabdi Setan 2",
+      "rating": "5",
+      "release_date": "2022-08-10",
+      "review": "Banyak jumpscare"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Sudah",
+      "title": "She Hulk",
+      "rating": "5",
+      "release_date": "2022-09-13",
+      "review": "Komedinya suka banget!"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Belum",
+      "title": "KKN di Desa Penari",
+      "rating": "5",
+      "release_date": "2022-09-01",
+      "review": "Cukup menggemparkan bagi perfilman bergenre horor di Indonesia"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Belum",
+      "title": "Mouse",
+      "rating": "4",
+      "release_date": "2019-02-13",
+      "review": "Film tentang psikopat yang diperankan oleh Lee Seung Gi"
+    }
+  },
+  {
+    "model": "mywatchlist.watchlist",
+    "fields": {
+      "watched": "Sudah",
+      "title": "Spider-Man: No Way Home",
+      "rating": "5",
+      "release_date": "2021-10-13",
+      "review": "Butuh film Spider-Man selanjutnya!"
+    }
+  }
+]
