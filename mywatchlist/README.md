@@ -1,6 +1,6 @@
 # Tugas 3: Pengimplementasian Data Delivery Menggunakan Django
 
-Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
+Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023 \
 **Nama  : Nadira Maysa Dyandra** \
 **NPM   : 2106632232** \
 **Kelas : A**
@@ -45,18 +45,17 @@ python manage.py startapp wishlist
 ```
 python manage.py makemigrations
 ```
-untuk mempersiapkan migrasi skema model ke dalam *database* Django lokal
+untuk mempersiapkan migrasi skema model ke dalam *database* Django lokal \
 4. Lakukan perintah 
 ```
 python manage.py migrate
 ```
-untuk menerapkan skema model yang telah dibuat ke dalam *database* 
-untuk menerapkan skema model yang telah dibuat ke dalam *database* Django lokal
-5. Memasukkan data melalui file initial_watchlist_data.json pada folder fixtures di dalam folder mywatchlist
+untuk menerapkan skema model yang telah dibuat ke dalam *database* Django lokal \
+5. Memasukkan data melalui file initial_watchlist_data.json pada folder fixtures di dalam folder mywatchlist \
 6. Menjalankan perintah 
 ```
 python manage.py loaddata initial_watchlist_data.json
 ```
-untuk memasukkan data ke dalam *database* Djangko lokal.
+untuk memasukkan data ke dalam *database* Djangko lokal. \
 
 ## Postman

@@ -8,8 +8,9 @@ def show_watchlist(request):
     data_watchlist = WatchList.objects.all()
     context = {
         'list_tontonan': data_watchlist,
-        'nama': 'Nadira Maysa Dyandra'
-     }
+        'nama': 'Nadira Maysa Dyandra',
+        'NPM': '2106632232',
+        }
     return render(request, "watchlist.html", context)
 
 def show_xml(request):
