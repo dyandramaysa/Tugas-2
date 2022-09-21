@@ -50,20 +50,20 @@ INSTALLED_APPS = [
 ]
 ```
 3. Membuat models.py pada folder mywatchlist untuk membuat model dengan fields watched, title, rating, release_date, dan review.
-3. Lakukan perintah berikut di terminal untuk mempersiapkan migrasi skema model ke dalam *database* Django lokal.
+4. Lakukan perintah berikut di terminal untuk mempersiapkan migrasi skema model ke dalam *database* Django lokal.
 ```
 python manage.py makemigrations
 ```
-4. Lakukan perintah berikut di terminal untuk menerapkan skema model yang telah dibuat ke dalam *database* Django lokal. 
+5. Lakukan perintah berikut di terminal untuk menerapkan skema model yang telah dibuat ke dalam *database* Django lokal. 
 ```
 python manage.py migrate
 ```
-5. Menambahkan data yang ingin ditampilkan pada file initial_watchlist_data.json pada folder fixtures di dalam folder mywatchlist. \
-6. Menjalankan perintah berikut untuk memuat data ke dalam *database* Djangko lokal.
+6. Menambahkan data yang ingin ditampilkan pada file initial_watchlist_data.json pada folder fixtures di dalam folder mywatchlist. \
+7. Menjalankan perintah berikut untuk memuat data ke dalam *database* Djangko lokal.
 ```
 python manage.py loaddata initial_watchlist_data.json
 ```
-7. Membuat fungsi-fungsi yang dibutuhkan untuk mengimplementasikan sebuah fitur untuk menyajikan data yang telah dibuat.
+8. Membuat fungsi-fungsi yang dibutuhkan untuk mengimplementasikan sebuah fitur untuk menyajikan data yang telah dibuat.
 ```
 def show_watchlist(request):
     .........
@@ -74,7 +74,7 @@ def show_json(request):
 def show_html(request):
     .........
 ```
-8. Membuat folder bernama templates di dalam folder aplikasi mywatchlist dan tambahkan file watchlist.html ke dalamnya.
+9. Membuat folder bernama templates di dalam folder aplikasi mywatchlist dan tambahkan file watchlist.html ke dalamnya.
 ```
 {% extends 'base.html' %}
 
@@ -108,7 +108,7 @@ def show_html(request):
 
 {% endblock content %}
 ```
-9. Membuat routing ke fugsi pada file views.py dengan cara menambahkan file urls.py pada folder mywatchlist sebagai berikut.
+10. Membuat routing ke fugsi pada file views.py dengan cara menambahkan file urls.py pada folder mywatchlist sebagai berikut.
 ```
 from django.urls import path
 from mywatchlist.views import show_watchlist
@@ -125,14 +125,14 @@ urlpatterns = [
     path('html/', show_json, name='show_html'),
 ]
 ```
-10. Daftarkan aplikasi mywatchlist ke dalam urls.py yang ada pada folder project_django dengan menambahkan potongan kode berikut.
+11. Daftarkan aplikasi mywatchlist ke dalam urls.py yang ada pada folder project_django dengan menambahkan potongan kode berikut.
 ```
 ...
 path('mywatchlist/', include('mywatchlist.urls')),
 ...
 ```
-11. Lakukan add, commit, dan push perubahan yang sudah dilakukan untuk menyimpannya ke dalam repositori GitHub.\
-12. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat. Pada tahap ini memerlukan sedikit konfigurasi pada aplikasi Heroku. Yaitu, perlu memuat ulang file initial_watchlist_data.json secara manual pada run console di dalam aplikasi yang telah dibuat di Heroku.
+12. Lakukan add, commit, dan push perubahan yang sudah dilakukan untuk menyimpannya ke dalam repositori GitHub.\
+13. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat. Pada tahap ini memerlukan sedikit konfigurasi pada aplikasi Heroku. Yaitu, perlu memuat ulang file initial_watchlist_data.json secara manual pada run console di dalam aplikasi yang telah dibuat di Heroku.
 ```
 python manage.py loaddata initial_watchlist_data.json
 ```
