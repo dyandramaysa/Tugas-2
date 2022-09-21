@@ -7,7 +7,9 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 
 ## Tautan Aplikasi Heroku
 Berikut adalah tautan menuju hasil lab: 
-https://tugas2nadira.herokuapp.com/mywatchlist/
+https://tugas2nadira.herokuapp.com/mywatchlist/html
+https://tugas2nadira.herokuapp.com/mywatchlist/xml
+https://tugas2nadira.herokuapp.com/mywatchlist/json
 
 ## Perbedaan JSON, XML, dan HTML
 **JSON**
