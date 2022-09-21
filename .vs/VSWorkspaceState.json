@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\katalog\\fixtures"
+    "\\katalog\\fixtures",
+    "\\katalog\\templates",
+    "\\mywatchlist",
+    "\\mywatchlist\\fixtures",
+    "\\mywatchlist\\templates"
   ],
+  "SelectedNode": "\\mywatchlist\\fixtures\\initial_watchlist_data.json",
   "PreviewInSolutionExplorer": false
 }

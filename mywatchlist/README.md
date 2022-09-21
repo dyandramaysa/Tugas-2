@@ -34,28 +34,112 @@ https://tugas2nadira.herokuapp.com/mywatchlist/
 - Harus menggunakan tag tertentu dan tidak memerlukan tag penutup
 
 ## Pentingnya *data delivery*
+Data delivery memungkinkan kita untuk mengirimkan data dari satu *stack* ke *stack* lainnya di dalam suatu platform. Sehingga, adanya Data Delivery akan membantu aplikasi-aplikasi yang berada di atas platform untuk saling bertukar informasi.  
 
 ## Implementasi Checklist
-1. Membuat aplikasi mywatchlist dengan perintah
+1. Membuat aplikasi mywatchlist dengan perintah berikut.
 ```
 python manage.py startapp wishlist
 ```
-2. Membuat models.py pada folder mywatchlist untuk membuat object
-3. Lakukan perintah 
+2. Menambahkan aplikasi mywatchlist ke dalam INSTALLED_APPS pada settings.py
+```
+INSTALLED_APPS = [
+    .....,
+    'mywatchlist',
+    .....,
+]
+```
+3. Membuat models.py pada folder mywatchlist untuk membuat model dengan fields watched, title, rating, release_date, dan review.
+3. Lakukan perintah berikut di terminal untuk mempersiapkan migrasi skema model ke dalam *database* Django lokal.
 ```
 python manage.py makemigrations
 ```
-untuk mempersiapkan migrasi skema model ke dalam *database* Django lokal \
-4. Lakukan perintah 
+4. Lakukan perintah berikut di terminal untuk menerapkan skema model yang telah dibuat ke dalam *database* Django lokal. 
 ```
 python manage.py migrate
 ```
-untuk menerapkan skema model yang telah dibuat ke dalam *database* Django lokal \
-5. Memasukkan data melalui file initial_watchlist_data.json pada folder fixtures di dalam folder mywatchlist \
-6. Menjalankan perintah 
+5. Menambahkan data yang ingin ditampilkan pada file initial_watchlist_data.json pada folder fixtures di dalam folder mywatchlist. \
+6. Menjalankan perintah berikut untuk memuat data ke dalam *database* Djangko lokal.
 ```
 python manage.py loaddata initial_watchlist_data.json
 ```
-untuk memasukkan data ke dalam *database* Djangko lokal. \
+7. Membuat fungsi-fungsi yang dibutuhkan untuk mengimplementasikan sebuah fitur untuk menyajikan data yang telah dibuat.
+```
+def show_watchlist(request):
+    .........
+def show_xml(request):
+    .........
+def show_json(request):
+    .........
+def show_html(request):
+    .........
+```
+8. Membuat folder bernama templates di dalam folder aplikasi mywatchlist dan tambahkan file watchlist.html ke dalamnya.
+```
+{% extends 'base.html' %}
 
+{% block content %}
+<h1>Lab 2 Assignment PBP/PBD</h1>
+
+<h5>Nama: </h5>
+<b>{{nama}}</b>
+<h5>Student ID: </h5>
+<p>{{NPM}}</p>
+
+<table>
+    <tr>
+        <th>Sudah/Belum</th>
+        <th>Judul</th>
+        <th>Rating</th>
+        <th>Tanggal Rilis</th>
+        <th>Review</th>
+    </tr>
+    {% comment %} Mencetak data ke dalam tabel {% endcomment %}
+    {% for film in list_tontonan %}
+    <tr>
+        <th>{{film.watched}}</th>
+        <th>{{film.title}}</th>
+        <th>{{film.rating}}</th>
+        <th>{{film.release_date}}</th>
+        <th>{{film.review}}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}
+```
+9. Membuat routing ke fugsi pada file views.py dengan cara menambahkan file urls.py pada folder mywatchlist sebagai berikut.
+```
+from django.urls import path
+from mywatchlist.views import show_watchlist
+from mywatchlist.views import show_xml
+from mywatchlist.views import show_json
+from mywatchlist.views import show_html
+
+app_name = 'mywatchlist'
+
+urlpatterns = [
+    path('', show_watchlist, name='show_watchlist'),
+    path('xml/', show_xml, name='show_xml'),
+    path('json/', show_json, name='show_json'),
+    path('html/', show_json, name='show_html'),
+]
+```
+10. Daftarkan aplikasi mywatchlist ke dalam urls.py yang ada pada folder project_django dengan menambahkan potongan kode berikut.
+```
+...
+path('mywatchlist/', include('mywatchlist.urls')),
+...
+```
+11. Lakukan add, commit, dan push perubahan yang sudah dilakukan untuk menyimpannya ke dalam repositori GitHub.\
+12. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat. Pada tahap ini memerlukan sedikit konfigurasi pada aplikasi Heroku. Yaitu, perlu memuat ulang file initial_watchlist_data.json secara manual pada run console di dalam aplikasi yang telah dibuat di Heroku.
+```
+python manage.py loaddata initial_watchlist_data.json
+```
 ## Postman
+**Akses HTML**
+![](/Asset/PostMan-HTML.png)
+**Akses XML**
+![](/Asset/PostMan-XML.png)
+**Akses JSON**
+![](/Asset/PostMan-JSON.png)

@@ -5,13 +5,7 @@ from django.core import serializers
 
 # Create your views here.
 def show_watchlist(request):
-    data_watchlist = WatchList.objects.all()
-    context = {
-        'list_tontonan': data_watchlist,
-        'nama': 'Nadira Maysa Dyandra',
-        'NPM': '2106632232',
-        }
-    return render(request, "watchlist.html", context)
+    return render(request, "watchlist.html",)
 
 def show_xml(request):
     data = WatchList.objects.all()
@@ -22,5 +16,10 @@ def show_json(request):
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
 def show_html(request):
-    data = WatchList.objects.all()
-    return HttpResponse(serializers.serialize("html", data), content_type="application/html")
+    data_watchlist = WatchList.objects.all()
+    context = {
+        'list_tontonan': data_watchlist,
+        'nama': 'Nadira Maysa Dyandra',
+        'NPM': '2106632232',
+        }
+    return render(request, "watchlist.html", context)
