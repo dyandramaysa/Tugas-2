@@ -9,7 +9,7 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 Berikut adalah tautan menuju hasil lab: \
 https://tugas2nadira.herokuapp.com/mywatchlist/html \
 https://tugas2nadira.herokuapp.com/mywatchlist/xml \
-https://tugas2nadira.herokuapp.com/mywatchlist/json \
+https://tugas2nadira.herokuapp.com/mywatchlist/json
 
 ## Perbedaan JSON, XML, dan HTML
 **JSON**
