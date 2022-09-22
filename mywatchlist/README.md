@@ -36,7 +36,8 @@ https://tugas2nadira.herokuapp.com/mywatchlist/json
 - Harus menggunakan tag tertentu dan tidak memerlukan tag penutup
 
 ## Pentingnya *data delivery*
-Data delivery memungkinkan kita untuk mengirimkan data dari satu *stack* ke *stack* lainnya di dalam suatu platform. Sehingga, adanya Data Delivery akan membantu aplikasi-aplikasi yang berada di atas platform untuk saling bertukar informasi.  
+Data delivery memungkinkan kita untuk mengirimkan data dari satu *stack* ke *stack* lainnya di dalam suatu platform. 
+Sehingga, adanya Data Delivery akan membantu aplikasi-aplikasi yang berada di atas platform untuk saling bertukar informasi.  
 
 ## Implementasi Checklist
 1. Membuat aplikasi mywatchlist dengan perintah berikut.
@@ -110,7 +111,7 @@ def show_html(request):
 
 {% endblock content %}
 ```
-10. Membuat routing ke fugsi pada file views.py dengan cara menambahkan file urls.py pada folder mywatchlist sebagai berikut.
+10. Membuat routing ke fungsi pada file views.py dengan cara menambahkan file urls.py pada folder mywatchlist sebagai berikut.
 ```
 from django.urls import path
 from mywatchlist.views import show_watchlist
@@ -140,8 +141,8 @@ python manage.py loaddata initial_watchlist_data.json
 ```
 ## Postman
 **Akses HTML**
-![](/Asset/PostMan-HTML.png)
+![](/Assets/PostMan-HTML.png)
 **Akses XML**
-![](/Asset/PostMan-XML.png)
+![](/Assets/PostMan-XML.png)
 **Akses JSON**
-![](/Asset/PostMan-JSON.png)
+![](/Assets/PostMan-JSON.png)
