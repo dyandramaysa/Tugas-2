@@ -36,8 +36,9 @@ https://tugas2nadira.herokuapp.com/mywatchlist/json
 - Harus menggunakan tag tertentu dan tidak memerlukan tag penutup
 
 ## Pentingnya *data delivery*
+Seiring dengan perkembangan aplikasi, semakin banyak data dengan beragam jenis dan format.  
 Data delivery memungkinkan kita untuk mengirimkan data dari satu *stack* ke *stack* lainnya di dalam suatu platform. 
-Sehingga, adanya Data Delivery akan membantu aplikasi-aplikasi yang berada di atas platform untuk saling bertukar informasi.  
+Sehingga, adanya Data Delivery akan membantu aplikasi-aplikasi yang berada di atas platform untuk saling bertukar informasi (memudahkan proses perpindahan data).  
 
 ## Implementasi Checklist
 1. Membuat aplikasi mywatchlist dengan perintah berikut.
