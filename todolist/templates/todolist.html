@@ -8,7 +8,7 @@
         <th>Title</th>
         <th>Description</th>
         <th>Status</th>
-        <th colspan="3">Detail</th>
+        <th colspan="3">Change Button</th>
     </tr>
     {% for todo in todolist %}
     <tr>
@@ -29,6 +29,5 @@
 <br>
 <button style="background-color:antiquewhite"><a href="{% url 'todolist:create_task' %}">Create New Task</a></button>
 <button style="background-color:antiquewhite"><a href="{% url 'todolist:logout' %}">Logout</a></button>
-<br>
-<br>
+
 {% endblock content %}
