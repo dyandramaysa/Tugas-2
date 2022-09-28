@@ -6,12 +6,12 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 **Kelas : A**
 
 ## Tautan Aplikasi Heroku
-Berikut adalah tautan menuju hasil lab:
-https://tugas2nadira.herokuapp.com/todolist
-https://tugas2nadira.herokuapp.com/todolist/register
-https://tugas2nadira.herokuapp.com/todolist/login
-https://tugas2nadira.herokuapp.com/todolist/logout
-https://tugas2nadira.herokuapp.com/todolist/create-task
+Berikut adalah tautan menuju hasil lab: \
+https://tugas2nadira.herokuapp.com/todolist \
+https://tugas2nadira.herokuapp.com/todolist/register \
+https://tugas2nadira.herokuapp.com/todolist/login \
+https://tugas2nadira.herokuapp.com/todolist/logout \
+https://tugas2nadira.herokuapp.com/todolist/create-task \
 
 ## Kegunaan {% csrf_token %} pada Elemen <form>
 Cross Site Request Forgery (CSRF) adalah sebuah serangan terhadap *web application* yang memanfaatkan *bug* atau *vulnerability* pada *web application* yang bekerja dengan cara mengeksploitasi suatu task dari sebuah Web dengan memanfaatkan autentikasi yang dimiliki oleh korban. \
@@ -37,15 +37,15 @@ Membuat elemen <form> secara manual dapat dilakukan dengan cara berikut.
 ```
 
 ## Proses Alur Data
-1. User meminta request dengan TyperAddress: http://host/path pada browser \
-2. Browser menghasilkan HTTP Request ke http://host/path \
-3. Server menerima HTTP Request dan mencari views.py yang sesuai untuk meng-handle permintaan \
-4. Views.py yang sesuai akan menghasilkan halaman FORM HTML \
-5. Halaman FORM yang dihasilkan views.py di tampilkan kepada user \
-6. User mengisi dan mengumpulkan Form \
-7. Browser menghasilkan HTTP Request, method, dan arguments ke URL tujuan berdasarkan HTML page FORM \
-8. Server menerima HTTP Request dan mencari views.py yang sesuai untuk meng-handle permintaan \
-9. Views.py yang sesuai akan melakukan sesuatu (tergantung pada kode) dan menghasilkan halaman HTML \
+1. User meminta request dengan TyperAddress: http://host/path pada browser 
+2. Browser menghasilkan HTTP Request ke http://host/path 
+3. Server menerima HTTP Request dan mencari views.py yang sesuai untuk meng-handle permintaan 
+4. Views.py yang sesuai akan menghasilkan halaman FORM HTML 
+5. Halaman FORM yang dihasilkan views.py di tampilkan kepada user 
+6. User mengisi dan mengumpulkan Form 
+7. Browser menghasilkan HTTP Request, method, dan arguments ke URL tujuan berdasarkan HTML page FORM 
+8. Server menerima HTTP Request dan mencari views.py yang sesuai untuk meng-handle permintaan 
+9. Views.py yang sesuai akan melakukan sesuatu (tergantung pada kode) dan menghasilkan halaman HTML 
 10. Browser menampilkan halaman HTML kepada user.
 
 ## Cara Implementasi *Checklist*
@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     .....,
 ]
 ```
-3. Membuat models.py pada folder todolist untuk membuat model dengan fields user, date, title, description, dan is_finished. \
+3. Membuat models.py pada folder todolist untuk membuat model dengan fields user, date, title, description, dan is_finished. 
 4. Lakukan perintah berikut di terminal untuk mempersiapkan migrasi skema model ke dalam *database* Django lokal.
 ```
 python manage.py makemigrations
