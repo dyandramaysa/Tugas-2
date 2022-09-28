@@ -35,7 +35,7 @@ def create_task(request):
     return render(request, "createtask.html", context)
 
 @login_required(login_url='/todolist/login/')
-def status(id):
+def status(request, id):
     status = Task.objects.get(pk=id)
     if status.is_finished:
         status.is_finished = False
@@ -45,7 +45,7 @@ def status(id):
     return HttpResponseRedirect(reverse('todolist:show_todolist'))
 
 @login_required(login_url='/todolist/login/')
-def delete(id):
+def delete(request, id):
     delete = Task.objects.get(pk=id)
     delete.delete()
     return HttpResponseRedirect(reverse('todolist:show_todolist'))
