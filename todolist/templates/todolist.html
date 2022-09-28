@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Halo {{user}}!</h3>
+
+<table border="2">
+    <tr>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th colspan="3">Detail</th>
+    </tr>
+    {% for todo in todolist %}
+    <tr>
+        <th>{{todo.date}}</th>
+        <th>{{todo.title}}</th>
+        <th>{{todo.description}}</th>
+        {% if todo.is_finished %}
+        <th>Selesai</th>
+        {% else %}
+        <th>Belum Selesai</th>
+        {% endif %}
+        <th><button><a href="{% url 'todolist:status' todo.id %}">Change Status</a></button></th>
+        <th><button><a href="{% url 'todolist:delete' todo.id %}">Delete Task</a></button></th>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<button><a href="{% url 'todolist:create_task' %}">Create New Task</a></button>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<br>
+<br>
+{% endblock content %}

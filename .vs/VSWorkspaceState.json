@@ -1,13 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Assets",
+    "\\katalog",
     "\\katalog\\fixtures",
     "\\katalog\\templates",
-    "\\mywatchlist",
-    "\\mywatchlist\\fixtures",
-    "\\mywatchlist\\templates"
+    "\\todolist"
   ],
-  "SelectedNode": "\\Assets",
+  "SelectedNode": "\\todolist\\README.md",
   "PreviewInSolutionExplorer": false
 }
