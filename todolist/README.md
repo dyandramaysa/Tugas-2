@@ -331,3 +331,5 @@ path('delete/<int:id>/', delete, name='delete'),
 ```
 9. Lakukan add, commit, dan push perubahan yang sudah dilakukan untuk menyimpannya ke dalam repositori GitHub.
 10. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat. Kemudian membuat 2 user dengan masing-masing 3 dummy to do list. 
+
+Demikian tugas 4 ini saya buat. Terima kasih atas perhatiannya.
