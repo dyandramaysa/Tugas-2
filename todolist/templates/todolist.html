@@ -2,7 +2,7 @@
 {% block content %}
 <h3>Halo {{user}}!</h3>
 
-<table border="2">
+<table border="2"; bordercolor="navy" ; bgcolor="pink">
     <tr>
         <th>Date</th>
         <th>Title</th>
@@ -20,15 +20,15 @@
         {% else %}
         <th>Belum Selesai</th>
         {% endif %}
-        <th><button><a href="{% url 'todolist:status' todo.id %}">Change Status</a></button></th>
-        <th><button><a href="{% url 'todolist:delete' todo.id %}">Delete Task</a></button></th>
+        <th><button style="background-color:antiquewhite"><a href="{% url 'todolist:status' todo.id %}">Change Status</a></button></th>
+        <th><button style="background-color:antiquewhite"><a href="{% url 'todolist:delete' todo.id %}">Delete Task</a></button></th>
     </tr>
     {% endfor %}
 </table>
 
 <br>
-<button><a href="{% url 'todolist:create_task' %}">Create New Task</a></button>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<button style="background-color:antiquewhite"><a href="{% url 'todolist:create_task' %}">Create New Task</a></button>
+<button style="background-color:antiquewhite"><a href="{% url 'todolist:logout' %}">Logout</a></button>
 <br>
 <br>
 {% endblock content %}
