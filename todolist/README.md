@@ -11,7 +11,7 @@ https://tugas2nadira.herokuapp.com/todolist \
 https://tugas2nadira.herokuapp.com/todolist/register \
 https://tugas2nadira.herokuapp.com/todolist/login \
 https://tugas2nadira.herokuapp.com/todolist/logout \
-https://tugas2nadira.herokuapp.com/todolist/create-task \
+https://tugas2nadira.herokuapp.com/todolist/create-task 
 
 ## Kegunaan {% csrf_token %} pada Elemen <form>
 Cross Site Request Forgery (CSRF) adalah sebuah serangan terhadap *web application* yang memanfaatkan *bug* atau *vulnerability* pada *web application* yang bekerja dengan cara mengeksploitasi suatu task dari sebuah Web dengan memanfaatkan autentikasi yang dimiliki oleh korban. \
