@@ -21,7 +21,7 @@ Internal CSS ini dapat digunakan untuk membuat tampilan yang unik pada setiap ha
 **Kelebihan Internal CSS**
     - Perubahan pada Internal CSS hanya berlaku pada satu halaman saja
     - Pengembang tidak perlu melakukan upload beberapa file karena HTML dan CSS berada dalam satu file
-    - Class dan ID dapat digunakan oleh internal stylesheet
+    - Class dan ID dapat digunakan oleh internal stylesheet \
 **Kekurangan Internal CSS** 
     - Tidak efisien jika ingin menggunakan CSS yang sama dalam beberapa file
     - Membuat performa website lebih lambat karena CSS yang berbeda-beda akan mengakibatkan loading ulang setiap kali user mengganti halaman website
@@ -29,18 +29,18 @@ Internal CSS ini dapat digunakan untuk membuat tampilan yang unik pada setiap ha
 Eksternal CSS adalah kode CSS yang ditulis terpisah dengan kode HTML. Eksternal CSS ini ditulis pada sebuah file khusus berekstensi .css. 
 File eksternal CSS ini biasanya diletakkan setelah bagian <head> pada halaman. 
 Aplikasi eksternal CSS ini lebih sederhana dan simpel dibandingkan dengan menambahkan kode CSS di setiap elemen HTML yang ingin di atur tampilannya. \
-**Kelebihan Eksternal CSS** \
+**Kelebihan Eksternal CSS** 
     - Ukuran file HTML lebih kecil
     - Struktur kode HTML lebih rapih
     - Loading website menjadi lebih cepat
-    - File CSS dapat digunakan di beberapa halaman website sekaligus
-**Kekurangan Eksternal CSS** \
+    - File CSS dapat digunakan di beberapa halaman website sekaligus \
+**Kekurangan Eksternal CSS** 
     - Halaman bisa menjadi berantakan ketika file CSS gagal dipanggil oleh file HTML. Hal ini biasanya terjadi akibat koneksi internet yang lambat. 
 3. **Inline CSS** \
 Inline CSS adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Setiap elemen HTML memiliki atribut style, di situ lah inline CSS ditulis. 
 Cara ini kurang efisien karena setiap tak HTML yang diberikan perlu memiliki style masing-masing. Hal ini akan membuat pengembang lebih sulit dalam mengatur website jika hanya menggunakan inline style CSS. 
 Sebab, Inline CSS hanya digunakan untuk mengubah satu elemen saja. \
-**Kelebihan Inline CSS** \
+**Kelebihan Inline CSS** 
     - Sangat membantu jika pengembang hanya ingin menguji dan melihat perubahan pada satu elemen
     - Dapat memperbaiki kode dengan cepat
     - Proses permintaan HTTP yang lebih kecil akan menyebabkan load website lebih cepat \
@@ -94,7 +94,7 @@ Selector pada CSS digunakan untuk menargetkan elemen HTML di halaman web yang di
         color: green;
     }
     ```
-    Kode di atas akan membuat teks pada seluruh elemen <h1> berwarna hijau.
+    Kode di atas akan membuat teks pada seluruh elemen < h1 > berwarna hijau.
 3. ID Selector
     Selector ini merupakan selector yang bersifat unik. Dengan kata lain, ID selector hanya dapat digunakan untuk satu elemen saja. Untuk membuatnya, kita memerlukan tanda pagar (#). Contoh kodenya adalah sebagai berikut. 
     ```
