@@ -1,33 +1,151 @@
 {% extends 'base.html' %}
+{% block meta %}
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body{
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        background: rgb(207, 228, 228);
+    }
+    .container{
+        position: relative;
+        width: 100%;
+        max-width: 2040px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 12px 12px 12px grey;
+        padding: 20px 30px;
+    }
+    .row{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .card{
+        background: rgb(235, 235, 178);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .card:hover{
+        background:  rgb(207, 228, 228);
+    }
+    .btn-1{
+        position: relative;
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 200px;
+        background: black;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+    .a1{
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 200px;
+        background: none;
+        border-radius: 5px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+    .a2{
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 200px;
+        background: none;
+        border-radius: 5px;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+    }
+    h1{
+        position: relative;
+        font-size: 40px;
+        font-weight: 600;
+    }
+    h2{
+        margin-top: 10px;
+        position: relative;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 32px;
+        color: black;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    h3{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: black;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    p{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: black;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .list-group-item.satu{
+        background: rgb(207, 241, 209);
+    }
+    .list-group-item.dua{
+        background: rgb(237, 195, 195);
+    }
+</style>
+{% endblock meta %}
+
 {% block content %}
-<h3>Halo {{user}}!</h3>
-
-<table border="2"; bordercolor="navy" ; bgcolor="pink">
-    <tr>
-        <th>Date</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th colspan="3">Change Button</th>
-    </tr>
-    {% for todo in todolist %}
-    <tr>
-        <th>{{todo.date}}</th>
-        <th>{{todo.title}}</th>
-        <th>{{todo.description}}</th>
-        {% if todo.is_finished %}
-        <th>Selesai</th>
-        {% else %}
-        <th>Belum Selesai</th>
-        {% endif %}
-        <th><button style="background-color:antiquewhite"><a href="{% url 'todolist:status' todo.id %}">Change Status</a></button></th>
-        <th><button style="background-color:antiquewhite"><a href="{% url 'todolist:delete' todo.id %}">Delete Task</a></button></th>
-    </tr>
-    {% endfor %}
-</table>
-
-<br>
-<button style="background-color:antiquewhite"><a href="{% url 'todolist:create_task' %}">Create New Task</a></button>
-<button style="background-color:antiquewhite"><a href="{% url 'todolist:logout' %}">Logout</a></button>
-
+<body>
+    <section class="p-5">
+        <div class="container">
+            <h1>Halo {{user}}!</h1>
+            <button class="btn-1"><a href="{% url 'todolist:create_task' %}" class="a1">Create New Task</a></button>
+            <button class="btn-1"><a href="{% url 'todolist:logout' %}" class="a1">Logout</a></button>
+            <div class="row text-center g-4">
+                {% for todo in todolist %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <h2 class="card-title">{{todo.title}}</h2>
+                        <h3 class="card-date">{{todo.date}}</h3>
+                        <p class="card-text">{{todo.description}}</p>
+                        {% if todo.is_finished %}
+                        <h3>Status: Selesai</h3>
+                        {% else %}
+                        <h3>Status: Belum Selesai</h3>
+                        {% endif %}                        
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item satu">
+                                <a href="{% url 'todolist:status' todo.id %}" class="a2">Change Status</a>
+                            </li>
+                            <li class="list-group-item dua">
+                                <a href="{% url 'todolist:delete' todo.id %}" class="a2">Delete Task</a>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </section>
+</body>
 {% endblock content %}

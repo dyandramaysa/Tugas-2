@@ -1,45 +1,143 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-<title>Login</title>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body{
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: rgb(207, 228, 228);
+    }
+    .container{
+        position: relative;
+        max-width: 600px;
+        width: 100%;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 12px 12px 12px grey;
+        padding: 25px 30px;
+    }
+    .container .form{
+        padding: 30px;
+    }
+    .container .form .title{
+        position: relative;
+        font-size: 27px;
+        font-weight: 600;
+
+    }
+    .form .title::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 30px;
+        background-color: rgb(207, 228, 228);
+        border-radius: 25px;
+    }
+    .form .input-field{
+        position: relative;
+        height: 50px;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .input-field input{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        padding: 0 35px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        border-bottom: 2px solid  rgb(207, 228, 228);
+        border-top: 2px solid transparent;
+    }
+    .input-field i{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: black;
+        font-size: 23px;
+    }
+    .btn{
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        background: black;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    .btn:hover{
+        background: gray;
+        border: none;
+        color: black;
+    }
+    h4{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: black;
+    }
+    p{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: black;
+    }
+    .list-group-item{
+        position: relative;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: red;
+        border: none;
+    }
+</style>
 {% endblock meta %}
 
 {% block content %}
-
-<div class="login">
-
-    <h1>Login</h1>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-
-</div>
+<body>
+    <div class="container">
+        <div class="form login">
+            <span class="title">Login</span>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="input-field">
+                    <input type="text" name="username" placeholder="Username" class="form-control">
+                    <i class="uil uil-user"></i>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" placeholder="Password" class="form-control">
+                    <i class="uil uil-lock"></i>
+                </div>
+                <div class="input-field">
+                    <input class="btn login_btn" type="submit" value="Login">
+                </div>
+                {% if messages %}
+                <ul class="list-group">
+                    {% for message in messages %}
+                    <li class="list-group-item">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <p class="my-2">Belum memiliki akun? <a href="{% url 'todolist:register' %}" class="text-decoration-none">Sign in disini</a></p>
+            </form>
+        </div>
+    </div>
+</body>
 
 {% endblock content %}
