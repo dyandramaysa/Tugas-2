@@ -22,42 +22,42 @@ https://tugas2nadira.herokuapp.com/todolist/create-task
     -   Perubahan pada Internal CSS hanya berlaku pada satu halaman saja
 	-   Pengembang tidak perlu melakukan upload beberapa file karena HTML dan CSS berada dalam satu file
 	-   Class dan ID dapat digunakan oleh internal stylesheet
-    **Kekurangan Internal CSS** \
+**Kekurangan Internal CSS** 
     -   Tidak efisien jika ingin menggunakan CSS yang sama dalam beberapa file
     -   Membuat performa website lebih lambat karena CSS yang berbeda-beda akan mengakibatkan loading ulang setiap kali user mengganti halaman website
 2. **Eksternal CSS**
     Eksternal CSS adalah kode CSS yang ditulis terpisah dengan kode HTML. Eksternal CSS ini ditulis pada sebuah file khusus berekstensi .css. 
     File eksternal CSS ini biasanya diletakkan setelah bagian <head> pada halaman. 
     Aplikasi eksternal CSS ini lebih sederhana dan simpel dibandingkan dengan menambahkan kode CSS di setiap elemen HTML yang ingin di atur tampilannya. \
-    **Kelebihan Eksternal CSS** \
+    **Kelebihan Eksternal CSS** 
     -   Ukuran file HTML lebih kecil
 	-   Struktur kode HTML lebih rapih
 	-   Loading website menjadi lebih cepat
 	-   File CSS dapat digunakan di beberapa halaman website sekaligus
-    **Kekurangan Eksternal CSS** \
+**Kekurangan Eksternal CSS** 
     -   Halaman bisa menjadi berantakan ketika file CSS gagal dipanggil oleh file HTML. Hal ini biasanya terjadi akibat koneksi internet yang lambat. 
 3. **Inline CSS**
     Inline CSS adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Setiap elemen HTML memiliki atribut style, di situ lah inline CSS ditulis. 
     Cara ini kurang efisien karena setiap tak HTML yang diberikan perlu memiliki style masing-masing. Hal ini akan membuat pengembang lebih sulit dalam mengatur website jika hanya menggunakan inline style CSS. 
     Sebab, Inline CSS hanya digunakan untuk mengubah satu elemen saja. \
-    **Kelebihan Inline CSS** \
+    **Kelebihan Inline CSS** 
     -   Sangat membantu jika pengembang hanya ingin menguji dan melihat perubahan pada satu elemen
 	-   Dapat memperbaiki kode dengan cepat
-    -   Proses permintaan HTTP yang lebih kecil akan menyebabkan load website lebih cepat
-    **Kekurangan Inline CSS** \
+    -   Proses permintaan HTTP yang lebih kecil akan menyebabkan load website lebih cepat \
+**Kekurangan Inline CSS** 
     -   Tidak efisien, karena Inline style CSS hanya dapat diterapkan pada satu elemen HTML saja.
 
 ## Tag HTML5
-    **Apa itu HTML?** \
-	Sebelum membahas tentang HTML5, kita harus memahami terlebih dahulu pengertian dari HTML itu sendiri. HTML atau Hyper Text Markup Language terdiri dari kata Hyper Text yang berarti sebuah teks pada suatu halaman yang memiliki kemampuan untuk dapat terhubung dengan teks pada suatu halaman yang lain dan Markup Language yang berarti HTML ini tersusun atas tak-tak markup dan setiap tak pada HTML menjelaskan perintah isi dokumen yang berbeda-beda. 
-	Dengan demikian, HTML ini digunakan untuk membuat dasar dari sebuah halaman web dengan memberi struktur, menghubungkan teks/tautan antar halaman, dan membagikan informasi yang terkait dengan sebuah halaman web. \
-    **Cara Kerja HTML** \
-    Pada dasarnya, HTML ditujukan untuk menampilkan elemen-elemen yang terdapat pada suatu halaman website. Setiap elemen ini ditunjukkan dengan tag <> sebagai pembuka dan tag </> sebagai penutup.
-	Kedua tag tersebut berisi inisial yang mewakili sebuah elemen halaman website. Contohnya adalah <p> yang merepresentasikan sebuah paragraf yang bisa diketikkan pada sebuah HTML editor.
-	Namun, agar memiliki konten, pengembang perlu memasukkan teks di antara tag <p> dan <p/>. Dengan demikian, pengembang telah membuat sebuah paragraf. \
-    **HTML5**
-    HTML5 adalah singkatan dari Hyper Text Markup Language Versi 5. Dengan kata lain, HTML5 adalah perbaikan dari HTML. Versi ini diciptakan untuk menunjang berbagai kebutuhan pengembangan website saat ini, misalnya dukungan untuk membuat website yang bersifat mobile-friendly.
-	HTML5 menggunakan syntax yang lebih sederhana dibandingkan dengan HTML, sehingga pengembang dapat membuat struktur halaman website yang kompleks secara lebih mudah. Selain itu, HTML5 juga memiliki banyak keunggulan lainnya. Misalnya sebagai berikut.
+**Apa itu HTML?** \
+Sebelum membahas tentang HTML5, kita harus memahami terlebih dahulu pengertian dari HTML itu sendiri. HTML atau Hyper Text Markup Language terdiri dari kata Hyper Text yang berarti sebuah teks pada suatu halaman yang memiliki kemampuan untuk dapat terhubung dengan teks pada suatu halaman yang lain dan Markup Language yang berarti HTML ini tersusun atas tak-tak markup dan setiap tak pada HTML menjelaskan perintah isi dokumen yang berbeda-beda. 
+Dengan demikian, HTML ini digunakan untuk membuat dasar dari sebuah halaman web dengan memberi struktur, menghubungkan teks/tautan antar halaman, dan membagikan informasi yang terkait dengan sebuah halaman web. \
+**Cara Kerja HTML** \
+Pada dasarnya, HTML ditujukan untuk menampilkan elemen-elemen yang terdapat pada suatu halaman website. Setiap elemen ini ditunjukkan dengan tag <> sebagai pembuka dan tag </> sebagai penutup.
+Kedua tag tersebut berisi inisial yang mewakili sebuah elemen halaman website. Contohnya adalah <p> yang merepresentasikan sebuah paragraf yang bisa diketikkan pada sebuah HTML editor.
+Namun, agar memiliki konten, pengembang perlu memasukkan teks di antara tag <p> dan <p/>. Dengan demikian, pengembang telah membuat sebuah paragraf. \
+**HTML5**
+HTML5 adalah singkatan dari Hyper Text Markup Language Versi 5. Dengan kata lain, HTML5 adalah perbaikan dari HTML. Versi ini diciptakan untuk menunjang berbagai kebutuhan pengembangan website saat ini, misalnya dukungan untuk membuat website yang bersifat mobile-friendly.
+HTML5 menggunakan syntax yang lebih sederhana dibandingkan dengan HTML, sehingga pengembang dapat membuat struktur halaman website yang kompleks secara lebih mudah. Selain itu, HTML5 juga memiliki banyak keunggulan lainnya. Misalnya sebagai berikut.
     -   Penanganan error yang lebih baik
 	-   Kemudahan untuk membuat aplikasi web
 	-   Syntax yang lebih sederhana
@@ -68,12 +68,12 @@ https://tugas2nadira.herokuapp.com/todolist/create-task
 	-   Fokus otomatis pada kolom form
     -   Menjalankan JavaScript pada web Browser
 ## CSS Selector
-    **CSS** \
-    CSS atau Cascading Style Sheet adalah bahasa yang digunakan untuk mengatur tampilan elemen dalam bahasa markup. Fungsi CSS adalah untuk memisahkan teks atau konten dari tampilan visual pada situs. 
-	Melalui CSS, pengembang dapat mengatur tampilan pada seluruh aspek dalam berkas yang berbeda. Selain itu, pengembang juga dapat menentukan style dan mengintegrasikannya di atas markup HTML. Adapun, proses penentuan style membutuhkan suatu CSS selector yang dapat memengaruhi cara kerja CSS. \
-    **CSS Selector** \
-    Selector pada CSS digunakan untuk menargetkan elemen HTML di halaman web yang diberi style. Dengan kata lain, CSS selector adalah serangkaian aturan dari CSS yang berfungsi untuk memilihi suatu elemen yang ingin diberi style. \
-    **Jenis-jenis Seceltor** \
+**CSS** \
+CSS atau Cascading Style Sheet adalah bahasa yang digunakan untuk mengatur tampilan elemen dalam bahasa markup. Fungsi CSS adalah untuk memisahkan teks atau konten dari tampilan visual pada situs. 
+Melalui CSS, pengembang dapat mengatur tampilan pada seluruh aspek dalam berkas yang berbeda. Selain itu, pengembang juga dapat menentukan style dan mengintegrasikannya di atas markup HTML. Adapun, proses penentuan style membutuhkan suatu CSS selector yang dapat memengaruhi cara kerja CSS. \
+**CSS Selector** \
+Selector pada CSS digunakan untuk menargetkan elemen HTML di halaman web yang diberi style. Dengan kata lain, CSS selector adalah serangkaian aturan dari CSS yang berfungsi untuk memilihi suatu elemen yang ingin diberi style. \
+**Jenis-jenis Seceltor** \
     1. Universal Selector
         Selector ini merupakan selector yang sering digunakan untuk menyeleksi dan memilih semua elemen pada suatu dokumen HTML. Pemrogram umumnya menggunakan universal selector pada awal penulisan dokumen CSS untuk mengatur ulang style bawaan dari browser. Untuk membuatnya, kita memerlukan tanda bintang (*). Contoh kodenya adalah sebagai berikut.
         ```
