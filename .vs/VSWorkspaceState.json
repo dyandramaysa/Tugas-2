@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\katalog\\fixtures",
-    "\\katalog\\templates"
+    "\\mywatchlist",
+    "\\todolist"
   ],
+  "SelectedNode": "\\mywatchlist\\test.py",
   "PreviewInSolutionExplorer": false
 }

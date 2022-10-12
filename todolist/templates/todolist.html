@@ -48,6 +48,20 @@
         border-radius: 10px;
         font-weight: bold;
     }
+    .btn{
+        border: none;
+        outline: none;
+        height: 50px;
+        width: 200px;
+        background: rgb(191, 185, 185);
+        border-radius: 10px;
+        font-weight: bold;
+    }
+    .button{
+        border: none;
+        outline: none;
+        background: none;
+    }
     .a1{
         border: none;
         outline: none;
@@ -115,13 +129,51 @@
 {% endblock meta %}
 
 {% block content %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <body>
     <section class="p-5">
         <div class="container">
             <h1>Halo {{user}}!</h1>
-            <button class="btn-1"><a href="{% url 'todolist:create_task' %}" class="a1">Create New Task</a></button>
-            <button class="btn-1"><a href="{% url 'todolist:logout' %}" class="a1">Logout</a></button>
-            <div class="row text-center g-4">
+            <div class="d-grid gap-2 d-md-block">
+                <button class="btn-1"><a href="{% url 'todolist:create_task' %}" class="a1">Create New Task</a></button>
+                <button class="btn-1"><a href="{% url 'todolist:logout' %}" class="a1">Logout</a></button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Task</button>    
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create Task</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="mt-4">
+                                <label for="Title">Title</label>
+                            </div>
+                            <input id="title-controller" type="text" name="title" placeholder="Title" required class="form-control">
+                            <div class="mt-4">
+                                <label for="description">Description</label>
+                            </div>
+                            <textarea id="description-controller" name="description" placeholder="Description" cols="30" rows="10" class="form-control" required></textarea>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button id="save-task" type="submit" class="btn btn-primary" value="Submit" onclick="">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- card  -->
+            <div id="todos-container" class="row text-center g-4">
+                <!--
                 {% for todo in todolist %}
                 <div class="col-md-4">
                     <div class="card">
@@ -143,10 +195,82 @@
                           </ul>
                     </div>
                 </div>
-                {% endfor %}
+                {% endfor %} -->
             </div>
             
         </div>
     </section>
 </body>
+
+<script>
+    function update(pk) {
+        $.post({
+            url: `status/${pk}/`,
+            type: 'post',
+            data: {},
+            success: showTodos
+        })
+    }
+
+    function deleteTask(pk) {
+        $.post({
+            url: `delete/${pk}/`,
+            type: 'post',
+            data: {},
+            success: showTodos
+        })
+    }
+
+    function createTask() {
+        $.post({
+            url: `add/`,
+            type: 'post',
+            data: {
+                'title': $('#title-controller').val(),
+                'description': $('#description-controller').val(),
+            },
+            success: showTodos
+        })
+    }
+    $(`#save-task`).attr('onclick', `createTask()`);
+
+    function showTodos() {
+        $.get(
+            './json',
+            function (data) {
+                $('#todos-container').empty();
+                for (let i = 0; i < data.length; i++) {
+                    $('#todos-container').append(
+                        `<div  class="col-md-4">
+                            <div class="card">
+                                <h2 class="card-title">${data[i].fields.title}</h2>
+                                <h3 class="card-date">${data[i].fields.date}</h3>
+                                <p class="card-text">${data[i].fields.description}</p>
+                                <p id="todo-mark-${i}" class="card-text"></p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item satu">
+                                        <button type="button" onclick="" id="status-button-${i}" class="button">Change Status</button>
+                                    </li>
+                                    <li class="list-group-item dua">
+                                        <button type="button" onclick="" id="delete-button-${i}" class="button">Delete Task</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>`
+                    )
+                    if (data[i].fields.is_finished) {
+                        $(`#todo-mark-${i}`).addClass('text-green-500').text('Selesai');
+                    } else {
+                        $(`#todo-mark-${i}`).addClass('text-red-600').text('Belum Selesai');
+                    }
+                    $(`#status-button-${i}`).attr('onclick', `update(${data[i].pk})`);
+                    $(`#delete-button-${i}`).attr('onclick', `deleteTask(${data[i].pk})`)
+                }
+            }
+        )
+    }
+
+    showTodos();
+</script>
+
 {% endblock content %}

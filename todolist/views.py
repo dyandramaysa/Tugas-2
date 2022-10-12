@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from datetime import date, datetime
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -7,8 +8,10 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from .forms import CreateTask
 from .models import Task
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.core import serializers
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -35,20 +38,23 @@ def create_task(request):
     return render(request, "createtask.html", context)
 
 @login_required(login_url='/todolist/login/')
+@csrf_exempt
 def status(request, id):
-    status = Task.objects.get(pk=id)
-    if status.is_finished:
-        status.is_finished = False
-    else:
-        status.is_finished = True
-    status.save()
-    return HttpResponseRedirect(reverse('todolist:show_todolist'))
+    if request.method == 'POST':
+        task = get_object_or_404(Task, pk=id, user=request.user)
+        task.is_finished = not task.is_finished
+        task.save()
+
+        return JsonResponse({'error': False})
 
 @login_required(login_url='/todolist/login/')
+@csrf_exempt
 def delete(request, id):
-    delete = Task.objects.get(pk=id)
-    delete.delete()
-    return HttpResponseRedirect(reverse('todolist:show_todolist'))
+    if request.method == 'POST':
+        task = get_object_or_404(Task, pk=id, user=request.user)
+        task.delete()
+
+        return JsonResponse({'error': False})
 
 def register(request):
     form = UserCreationForm()
@@ -79,3 +85,19 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('todolist:login')
+
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    data = Task.objects.filter(user=request.user).order_by('id')
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+@login_required(login_url='/todolist/login/')
+@csrf_exempt
+def create_task_AJAX(request):
+    if request.method == "POST":
+        user = request.user
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+
+        Task.objects.create(user=user,title=title, description=description)
+        return JsonResponse({'error': False, 'msg':'Successful'})
