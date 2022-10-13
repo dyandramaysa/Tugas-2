@@ -100,4 +100,4 @@ def create_task_AJAX(request):
         description = request.POST.get('description')
 
         Task.objects.create(user=user,title=title, description=description)
-        return JsonResponse({'error': False, 'msg':'Successful'})
+    return JsonResponse({'error': False, 'msg':'Successful'})
